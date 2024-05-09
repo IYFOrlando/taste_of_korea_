@@ -1327,9 +1327,11 @@
 							</div>
 							<div class="row mb-5">
 								<div class="col">
-									<form class="contact-form form-style-4 form-errors-light appear-animation"
+									<form id="contactForm"
+										class="contact-form-recaptcha-v3 contact-form form-style-4 form-errors-light appear-animation"
 										data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900"
-										action="php/contact-form.php" method="POST">
+										action="php/contact-form-recaptcha-v3.php" method="POST">
+										<!--
 										<div class="contact-form-success alert alert-success d-none mt-4">
 											<strong>Success!</strong> Your message has been sent to us.
 										</div>
@@ -1338,7 +1340,7 @@
 											<strong>Error!</strong> There was an error sending your message.
 											<span class="mail-error-message text-1 d-block"></span>
 										</div>
-
+										-->
 										<div class="row">
 											<div class="form-group col-md-4">
 												<input type="text" value="" data-msg-required="Please enter your name." maxlength="100"
@@ -1402,21 +1404,26 @@
 		<!-- Vendor -->
 		<script src="vendor/plugins/js/plugins.min.js"></script>
 
+		<script src="vendor/jquery.validation/jquery.validate.min.js"></script>
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>
 
 		<!-- Current Page Vendor and Views -->
-		<script src="js/views/view.contact.js"></script>
-		<script src="vendor/jquery.validation/jquery.validate.min.js"></script>
+
 
 		<!-- Demo -->
 		<script src="js/demos/demo-band.js"></script>
 
 		<!-- Theme Custom -->
+		<script src="js/views/view.contact.js"></script>
 		<script src="js/custom.js"></script>
 
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
+
+
+		<script src="https://www.google.com/recaptcha/api.js?render=6LcZP9cpAAAAAD3oXGJRZdsqCF0m88Zp-OhPz2qN"></script>
+
 
 </body>
 

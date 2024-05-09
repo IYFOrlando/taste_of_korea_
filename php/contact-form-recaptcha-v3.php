@@ -25,7 +25,6 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
 
 	// Your Google reCAPTCHA generated Secret Key here
 	$secret = 'Y6LcZP9cpAAAAAA13hkDsWK9tSJnaiz7-a22PVXID';
-	$mail->SMTPDebug = 2; // Enable verbose debug output
 	if( ini_get('allow_url_fopen') ) {
 		//reCAPTCHA - Using file_get_contents()
 		$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
@@ -53,7 +52,7 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
 	if($responseData->success) {
 
 		// Step 1 - Enter your email address below.
-		$email = 'orland@iyfusa.org';
+		$email = 'ing.jod@gmail.com';
 
 		// If the e-mail is not working, change the debug option to 2 | $debug = 2;
 		$debug = 0;

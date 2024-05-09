@@ -1,6 +1,6 @@
 <?php
 /*
-Name: 			Contact Form - Google Recaptcha v3
+Name: 			Contact Form - Google Recaptcha v2
 Written by: 	Okler Themes - (http://www.okler.net)
 Theme Version:	10.2.0
 */
@@ -24,8 +24,8 @@ require 'php-mailer/src/Exception.php';
 if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
 
 	// Your Google reCAPTCHA generated Secret Key here
-	$secret = 'Y6LcZP9cpAAAAAA13hkDsWK9tSJnaiz7-a22PVXID';
-	$mail->SMTPDebug = 2; // Enable verbose debug output
+	$secret = 'YOUR_RECAPTCHA_SECRET_KEY';
+	
 	if( ini_get('allow_url_fopen') ) {
 		//reCAPTCHA - Using file_get_contents()
 		$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
@@ -53,7 +53,7 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
 	if($responseData->success) {
 
 		// Step 1 - Enter your email address below.
-		$email = 'orland@iyfusa.org';
+		$email = 'you@domain.com';
 
 		// If the e-mail is not working, change the debug option to 2 | $debug = 2;
 		$debug = 0;
@@ -140,11 +140,11 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
 		}
 
 	} else {
-		$arrResult = array ('response'=>'error','errorMessage'=>'reCaptcha Error: Verifcation failed (no success). Please contact the website administrator.');
+		$arrResult = array ('response'=>'error','errorMessage'=>'Robot verification failed, please try again');
 		echo json_encode($arrResult);
 	}
 
 } else { 
-	$arrResult = array ('response'=>'error','errorMessage'=>'reCaptcha Error: Invalid token. Please contact the website administrator.');
+	$arrResult = array ('response'=>'error','errorMessage'=>'Please click on the reCAPTCHA box.');
 	echo json_encode($arrResult);
 }
