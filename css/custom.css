@@ -7,10 +7,14 @@
 }
 
 .image-container_trip img {
-  border-radius: 50%;
-  width: 100px;
-  /* Ajusta el tamaño de la imagen según tus necesidades */
-  height: 100px;
+  border-radius: 2%;
+  width: 50px;
+  /*Ajustaeltamañodelaimagensegúntusnecesidades*/
+  height: auto;
+  -webkit-border-radius: 2%;
+  -moz-border-radius: 2%;
+  -ms-border-radius: 2%;
+  -o-border-radius: 2%;
 }
 
 .content_trip {
